@@ -4,7 +4,7 @@ import cors from "cors";
 import { pool as db } from "./db.js";
 
 const app = express();
-const PORT = 5000;
+const PORT = 3000;
 
 app.use(cors());
 app.use(express.json());
@@ -27,6 +27,7 @@ app.post("/registration", async (req, res) => {
 
 app.listen(PORT, async () => {
   try {
+    await db.connect();
     console.log("SERVER IS WORKING!");
   } catch (err) {
     console.log(err);
