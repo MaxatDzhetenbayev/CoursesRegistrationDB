@@ -5,7 +5,7 @@ import { pool as db } from "./db.js";
 
 const app = express();
 const PORT = 3000;
-
+					
 app.use(cors());
 app.use(express.json());
 
